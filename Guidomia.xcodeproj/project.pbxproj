@@ -15,6 +15,7 @@
 		FA316E1B28831842009800D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA316E1A28831842009800D2 /* Assets.xcassets */; };
 		FA316E1E28831842009800D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA316E1C28831842009800D2 /* LaunchScreen.storyboard */; };
 		FA316E2928831842009800D2 /* GuidomiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA316E2828831842009800D2 /* GuidomiaTests.swift */; };
+		FA316E472883201D009800D2 /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = FA316E462883201D009800D2 /* car_list.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		FA316E2428831842009800D2 /* GuidomiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuidomiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA316E2828831842009800D2 /* GuidomiaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaTests.swift; sourceTree = "<group>"; };
 		FA316E2A28831842009800D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA316E462883201D009800D2 /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,12 @@
 		FA316E0D28831840009800D2 /* Guidomia */ = {
 			isa = PBXGroup;
 			children = (
+				FA316E482883202B009800D2 /* Entity */,
+				FA316E4528832007009800D2 /* Service */,
+				FA316E4428831FFF009800D2 /* UseCase */,
+				FA316E4328831FF4009800D2 /* Presenter */,
+				FA316E4228831FED009800D2 /* View */,
+				FA316E4128831FDB009800D2 /* Resources */,
 				FA316E0E28831840009800D2 /* AppDelegate.swift */,
 				FA316E1028831840009800D2 /* SceneDelegate.swift */,
 				FA316E1228831840009800D2 /* ViewController.swift */,
@@ -100,6 +108,49 @@
 				FA316E2A28831842009800D2 /* Info.plist */,
 			);
 			path = GuidomiaTests;
+			sourceTree = "<group>";
+		};
+		FA316E4128831FDB009800D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA316E462883201D009800D2 /* car_list.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA316E4228831FED009800D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA316E4328831FF4009800D2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FA316E4428831FFF009800D2 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		FA316E4528832007009800D2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FA316E482883202B009800D2 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +235,7 @@
 			files = (
 				FA316E1E28831842009800D2 /* LaunchScreen.storyboard in Resources */,
 				FA316E1B28831842009800D2 /* Assets.xcassets in Resources */,
+				FA316E472883201D009800D2 /* car_list.json in Resources */,
 				FA316E1628831840009800D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
