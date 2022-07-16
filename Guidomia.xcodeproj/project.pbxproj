@@ -15,18 +15,10 @@
 		FA316E1B28831842009800D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA316E1A28831842009800D2 /* Assets.xcassets */; };
 		FA316E1E28831842009800D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA316E1C28831842009800D2 /* LaunchScreen.storyboard */; };
 		FA316E2928831842009800D2 /* GuidomiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA316E2828831842009800D2 /* GuidomiaTests.swift */; };
-		FA316E3428831842009800D2 /* GuidomiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA316E3328831842009800D2 /* GuidomiaUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		FA316E2528831842009800D2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FA316E0328831840009800D2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FA316E0A28831840009800D2;
-			remoteInfo = Guidomia;
-		};
-		FA316E3028831842009800D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FA316E0328831840009800D2 /* Project object */;
 			proxyType = 1;
@@ -48,9 +40,6 @@
 		FA316E2428831842009800D2 /* GuidomiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuidomiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA316E2828831842009800D2 /* GuidomiaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaTests.swift; sourceTree = "<group>"; };
 		FA316E2A28831842009800D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA316E2F28831842009800D2 /* GuidomiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuidomiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA316E3328831842009800D2 /* GuidomiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidomiaUITests.swift; sourceTree = "<group>"; };
-		FA316E3528831842009800D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,13 +57,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA316E2C28831842009800D2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,7 +65,6 @@
 			children = (
 				FA316E0D28831840009800D2 /* Guidomia */,
 				FA316E2728831842009800D2 /* GuidomiaTests */,
-				FA316E3228831842009800D2 /* GuidomiaUITests */,
 				FA316E0C28831840009800D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,7 +74,6 @@
 			children = (
 				FA316E0B28831840009800D2 /* Guidomia.app */,
 				FA316E2428831842009800D2 /* GuidomiaTests.xctest */,
-				FA316E2F28831842009800D2 /* GuidomiaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,15 +100,6 @@
 				FA316E2A28831842009800D2 /* Info.plist */,
 			);
 			path = GuidomiaTests;
-			sourceTree = "<group>";
-		};
-		FA316E3228831842009800D2 /* GuidomiaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FA316E3328831842009800D2 /* GuidomiaUITests.swift */,
-				FA316E3528831842009800D2 /* Info.plist */,
-			);
-			path = GuidomiaUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,24 +140,6 @@
 			productReference = FA316E2428831842009800D2 /* GuidomiaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FA316E2E28831842009800D2 /* GuidomiaUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FA316E3E28831842009800D2 /* Build configuration list for PBXNativeTarget "GuidomiaUITests" */;
-			buildPhases = (
-				FA316E2B28831842009800D2 /* Sources */,
-				FA316E2C28831842009800D2 /* Frameworks */,
-				FA316E2D28831842009800D2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FA316E3128831842009800D2 /* PBXTargetDependency */,
-			);
-			name = GuidomiaUITests;
-			productName = GuidomiaUITests;
-			productReference = FA316E2F28831842009800D2 /* GuidomiaUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +153,6 @@
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					FA316E2328831842009800D2 = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = FA316E0A28831840009800D2;
-					};
-					FA316E2E28831842009800D2 = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = FA316E0A28831840009800D2;
 					};
@@ -224,7 +173,6 @@
 			targets = (
 				FA316E0A28831840009800D2 /* Guidomia */,
 				FA316E2328831842009800D2 /* GuidomiaTests */,
-				FA316E2E28831842009800D2 /* GuidomiaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,13 +189,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FA316E2228831842009800D2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FA316E2D28831842009800D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -276,14 +217,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA316E2B28831842009800D2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA316E3428831842009800D2 /* GuidomiaUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -291,11 +224,6 @@
 			isa = PBXTargetDependency;
 			target = FA316E0A28831840009800D2 /* Guidomia */;
 			targetProxy = FA316E2528831842009800D2 /* PBXContainerItemProxy */;
-		};
-		FA316E3128831842009800D2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FA316E0A28831840009800D2 /* Guidomia */;
-			targetProxy = FA316E3028831842009800D2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -450,7 +378,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigoVelazquez.Guidomia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -469,7 +397,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigoVelazquez.Guidomia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -517,46 +445,6 @@
 			};
 			name = Release;
 		};
-		FA316E3F28831842009800D2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QUWN7GALHC;
-				INFOPLIST_FILE = GuidomiaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigoVelazquez.GuidomiaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Guidomia;
-			};
-			name = Debug;
-		};
-		FA316E4028831842009800D2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QUWN7GALHC;
-				INFOPLIST_FILE = GuidomiaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.rodrigoVelazquez.GuidomiaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Guidomia;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -583,15 +471,6 @@
 			buildConfigurations = (
 				FA316E3C28831842009800D2 /* Debug */,
 				FA316E3D28831842009800D2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FA316E3E28831842009800D2 /* Build configuration list for PBXNativeTarget "GuidomiaUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FA316E3F28831842009800D2 /* Debug */,
-				FA316E4028831842009800D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
