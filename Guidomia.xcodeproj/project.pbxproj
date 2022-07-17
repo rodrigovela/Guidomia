@@ -18,6 +18,11 @@
 		FA316E472883201D009800D2 /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = FA316E462883201D009800D2 /* car_list.json */; };
 		FA316E4A28832105009800D2 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA316E4928832105009800D2 /* Car.swift */; };
 		FA316E4E288322AE009800D2 /* CarsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA316E4D288322AE009800D2 /* CarsPresenter.swift */; };
+		FA7871652884A50C00F5E6AE /* HeaderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871642884A50C00F5E6AE /* HeaderImage.swift */; };
+		FA7871672884A51C00F5E6AE /* HeaderImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7871662884A51C00F5E6AE /* HeaderImage.xib */; };
+		FA78716A2884B9EA00F5E6AE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871692884B9EA00F5E6AE /* UIColor.swift */; };
+		FA78716E2884BB9600F5E6AE /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78716D2884BB9600F5E6AE /* NavigationBar.swift */; };
+		FA7871702884BBC100F5E6AE /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA78716F2884BBC100F5E6AE /* NavigationBar.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 		FA316E462883201D009800D2 /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
 		FA316E4928832105009800D2 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		FA316E4D288322AE009800D2 /* CarsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsPresenter.swift; sourceTree = "<group>"; };
+		FA7871642884A50C00F5E6AE /* HeaderImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderImage.swift; sourceTree = "<group>"; };
+		FA7871662884A51C00F5E6AE /* HeaderImage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderImage.xib; sourceTree = "<group>"; };
+		FA7871692884B9EA00F5E6AE /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		FA78716D2884BB9600F5E6AE /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationBar.swift; path = ../../../../../../NavigationBar.swift; sourceTree = "<group>"; };
+		FA78716F2884BBC100F5E6AE /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,7 @@
 		FA316E0D28831840009800D2 /* Guidomia */ = {
 			isa = PBXGroup;
 			children = (
+				FA7871682884B9CB00F5E6AE /* Extension */,
 				FA316E482883202B009800D2 /* Entity */,
 				FA316E4528832007009800D2 /* Service */,
 				FA316E4428831FFF009800D2 /* UseCase */,
@@ -124,6 +135,7 @@
 		FA316E4228831FED009800D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA7871632884A40300F5E6AE /* CustomView */,
 				FA316E1228831840009800D2 /* CarsViewController.swift */,
 			);
 			path = View;
@@ -157,6 +169,41 @@
 				FA316E4928832105009800D2 /* Car.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		FA7871632884A40300F5E6AE /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				FA78716C2884BB8000F5E6AE /* NavigationBar */,
+				FA78716B2884BB7200F5E6AE /* HeaderImage */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		FA7871682884B9CB00F5E6AE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA7871692884B9EA00F5E6AE /* UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FA78716B2884BB7200F5E6AE /* HeaderImage */ = {
+			isa = PBXGroup;
+			children = (
+				FA7871642884A50C00F5E6AE /* HeaderImage.swift */,
+				FA7871662884A51C00F5E6AE /* HeaderImage.xib */,
+			);
+			path = HeaderImage;
+			sourceTree = "<group>";
+		};
+		FA78716C2884BB8000F5E6AE /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				FA78716D2884BB9600F5E6AE /* NavigationBar.swift */,
+				FA78716F2884BBC100F5E6AE /* NavigationBar.xib */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +289,8 @@
 				FA316E1E28831842009800D2 /* LaunchScreen.storyboard in Resources */,
 				FA316E1B28831842009800D2 /* Assets.xcassets in Resources */,
 				FA316E472883201D009800D2 /* car_list.json in Resources */,
+				FA7871702884BBC100F5E6AE /* NavigationBar.xib in Resources */,
+				FA7871672884A51C00F5E6AE /* HeaderImage.xib in Resources */,
 				FA316E1628831840009800D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +314,10 @@
 				FA316E4A28832105009800D2 /* Car.swift in Sources */,
 				FA316E4E288322AE009800D2 /* CarsPresenter.swift in Sources */,
 				FA316E0F28831840009800D2 /* AppDelegate.swift in Sources */,
+				FA78716E2884BB9600F5E6AE /* NavigationBar.swift in Sources */,
+				FA78716A2884B9EA00F5E6AE /* UIColor.swift in Sources */,
 				FA316E1128831840009800D2 /* SceneDelegate.swift in Sources */,
+				FA7871652884A50C00F5E6AE /* HeaderImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

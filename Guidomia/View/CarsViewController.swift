@@ -19,13 +19,16 @@ struct CarsViewModel {
 }
 
 final class CarsViewController: UIViewController {
-    @IBOutlet private weak var imageHeader: UIImageView!
+
+    @IBOutlet weak var headerImage: HeaderImage!
     @IBOutlet private weak var carsTableView: UITableView!
     
     private lazy var presenter: CarsPresenterProtocol = CarsPresenter(view: self)
     var viewModel: CarsViewModel = .empty {
         didSet {
-            imageHeader.image = viewModel.headerImage
+            headerImage.imageView.image = viewModel.headerImage
+            headerImage.title.text = "Tacoma 2021"
+            headerImage.subtitle.text = "Get your's now"
             carsTableView.reloadData()
         }
     }
@@ -34,6 +37,7 @@ final class CarsViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         presenter.sceneDidLoad()
+        self.view.backgroundColor = .customOrange
     }
     
     override func viewWillAppear(_ animated: Bool) {
