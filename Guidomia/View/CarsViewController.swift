@@ -35,6 +35,11 @@ final class CarsViewController: UIViewController {
         setupTableView()
         presenter.sceneDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 }
 
 extension CarsViewController: CarsView {
