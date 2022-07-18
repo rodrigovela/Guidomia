@@ -42,12 +42,19 @@ final class ExpandedCarTableViewCell: UITableViewCell {
             view.removeFromSuperview()
         }
         
-        if !viewModel.pros.isEmpty {
+        add(titleVM: viewModel.prosTitle, list: viewModel.pros)
+        add(titleVM: viewModel.consTitle, list: viewModel.cons)
+    }
+}
+
+private extension ExpandedCarTableViewCell {
+    func add(titleVM: LabelViewModel, list: [LabelViewModel]) {
+        if !list.isEmpty {
             let title = UILabel()
-            title.setup(viewModel: viewModel.prosTitle)
+            title.setup(viewModel: titleVM)
             
-            let pros: [UILabel] = viewModel.pros.compactMap { vm in
-                let pro = UILabel()
+            let points: [UILabel] = list.compactMap { vm in
+                let point = UILabel()
                 let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.black,
                                                                  NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
                 let paragraphStyle = NSMutableParagraphStyle()
@@ -60,38 +67,12 @@ final class ExpandedCarTableViewCell: UITableViewCell {
                 let firstString = NSMutableAttributedString(string: "•\t", attributes: bulletAttributes)
                 
                 firstString.append(NSAttributedString(string: vm.text, attributes: attributes))
-                pro.attributedText = firstString
-                return pro
+                point.attributedText = firstString
+                return point
             }
             
             descriptionStack.addArrangedSubview(title)
-            pros.forEach(descriptionStack.addArrangedSubview(_:))
-        }
-        
-        if !viewModel.cons.isEmpty {
-            let title = UILabel()
-            title.setup(viewModel: viewModel.consTitle)
-            
-            let cons: [UILabel] = viewModel.cons.compactMap { vm in
-                let con = UILabel()
-                let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.black,
-                                                                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
-                let paragraphStyle = NSMutableParagraphStyle()
-                paragraphStyle.firstLineHeadIndent = 10.0
-                
-                
-                var bulletAttributes = [NSAttributedString.Key.foregroundColor: UIColor.customOrange,
-                                        NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30)]
-                bulletAttributes[.paragraphStyle] = paragraphStyle
-                let firstString = NSMutableAttributedString(string: "•\t", attributes: bulletAttributes)
-                
-                firstString.append(NSAttributedString(string: vm.text, attributes: attributes))
-                con.attributedText = firstString
-                return con
-            }
-            
-            descriptionStack.addArrangedSubview(title)
-            cons.forEach(descriptionStack.addArrangedSubview(_:))
+            points.forEach(descriptionStack.addArrangedSubview(_:))
         }
     }
 }

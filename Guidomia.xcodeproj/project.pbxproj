@@ -36,6 +36,8 @@
 		FA7871882884F75C00F5E6AE /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871872884F75C00F5E6AE /* FetchImage.swift */; };
 		FA78718B28851BC000F5E6AE /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78718A28851BC000F5E6AE /* FilterView.swift */; };
 		FA78718D28851BD400F5E6AE /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA78718C28851BD400F5E6AE /* FilterView.xib */; };
+		FA78718F2885F06600F5E6AE /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78718E2885F06600F5E6AE /* CustomView.swift */; };
+		FA7871912885F24300F5E6AE /* CarsTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871902885F24300F5E6AE /* CarsTableViewItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		FA7871872884F75C00F5E6AE /* FetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImage.swift; sourceTree = "<group>"; };
 		FA78718A28851BC000F5E6AE /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		FA78718C28851BD400F5E6AE /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		FA78718E2885F06600F5E6AE /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		FA7871902885F24300F5E6AE /* CarsTableViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTableViewItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +211,7 @@
 				FA78718928851BA200F5E6AE /* Filter */,
 				FA78716C2884BB8000F5E6AE /* NavigationBar */,
 				FA78716B2884BB7200F5E6AE /* HeaderImage */,
+				FA78718E2885F06600F5E6AE /* CustomView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				FA7871812884EF6300F5E6AE /* SeparatorTableViewCell.swift */,
 				FA7871822884EF6300F5E6AE /* SeparatorTableViewCell.xib */,
 				FA7871852884F25500F5E6AE /* CarsTableViewCellFactory.swift */,
+				FA7871902885F24300F5E6AE /* CarsTableViewItem.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -375,11 +381,13 @@
 				FA78718B28851BC000F5E6AE /* FilterView.swift in Sources */,
 				FA7871882884F75C00F5E6AE /* FetchImage.swift in Sources */,
 				FA316E4E288322AE009800D2 /* CarsPresenter.swift in Sources */,
+				FA78718F2885F06600F5E6AE /* CustomView.swift in Sources */,
 				FA78717D2884E12C00F5E6AE /* CarsService.swift in Sources */,
 				FA7871832884EF6300F5E6AE /* SeparatorTableViewCell.swift in Sources */,
 				FA7871742884C2A900F5E6AE /* CarTableViewCell.swift in Sources */,
 				FA316E0F28831840009800D2 /* AppDelegate.swift in Sources */,
 				FA78716E2884BB9600F5E6AE /* NavigationBar.swift in Sources */,
+				FA7871912885F24300F5E6AE /* CarsTableViewItem.swift in Sources */,
 				FA7871782884C2C100F5E6AE /* ExpandedCarTableViewCell.swift in Sources */,
 				FA78716A2884B9EA00F5E6AE /* UIColor.swift in Sources */,
 				FA7871802884E6DB00F5E6AE /* LabelViewModel.swift in Sources */,

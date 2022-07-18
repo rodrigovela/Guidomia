@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class HeaderImage: UIView {
+final class HeaderImage: UIView, CustomView {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var title: UILabel!
@@ -15,23 +15,13 @@ final class HeaderImage: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
+        loadXIB()
         imageView.contentMode = .scaleAspectFill
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupView()
+        loadXIB()
         imageView.contentMode = .scaleAspectFill
-    }
-    
-    func setupView() {
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle: nil)
-        guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else {
-            return
-        }
-        
-        self.addSubview(view)
-        view.frame = self.bounds
     }
 }

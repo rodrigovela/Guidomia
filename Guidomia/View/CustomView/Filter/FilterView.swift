@@ -25,7 +25,7 @@ struct FilterViewModel {
     var anyModelOptions: [String]
 }
 
-final class FilterView: UIView {
+final class FilterView: UIView, CustomView {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var anyMakeDropdown: UITextField!
@@ -49,24 +49,14 @@ final class FilterView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
+        loadXIB()
         setupDropDown()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupView()
+        loadXIB()
         setupDropDown()
-    }
-    
-    func setupView() {
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle: nil)
-        guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else {
-            return
-        }
-        
-        self.addSubview(view)
-        view.frame = self.bounds
     }
     
     func setupDropDown() {
