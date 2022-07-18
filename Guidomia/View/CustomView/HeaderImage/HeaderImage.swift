@@ -16,13 +16,13 @@ final class HeaderImage: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
     }
     
     func setupView() {

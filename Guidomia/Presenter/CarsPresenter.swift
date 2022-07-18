@@ -44,8 +44,15 @@ extension CarsPresenter: CarsPresenterProtocol {
     }
     
     func didSelectCar(indexPath: Int) {
-        let deletedIndexPath = expandedItemIndex + 1
-        view?.delete(formatViewModel(insert: false), indexPath: [.init(row: deletedIndexPath, section: 0)])
+        let deletedViewModel = formatViewModel(insert: false)
+        let deleteIndex = deletedViewModel.sections[0].firstIndex { item in
+            if let car = item as? CarTableViewCellViewModel {
+                return car.index == expandedItemIndex
+            } else {
+                return false
+            }
+        } ?? 0
+        view?.delete(deletedViewModel, indexPath: [.init(row: deleteIndex + 1, section: 0)])
         expandedItemIndex = indexPath
         
         let newViewModel = formatViewModel(insert: true)
@@ -56,7 +63,7 @@ extension CarsPresenter: CarsPresenterProtocol {
                 return false
             }
         } ?? 0
-        view?.insert(formatViewModel(insert: true), indexPath: [.init(row: insertIndex + 1, section: 0)])
+        view?.insert(newViewModel, indexPath: [.init(row: insertIndex + 1, section: 0)])
     }
 }
 
