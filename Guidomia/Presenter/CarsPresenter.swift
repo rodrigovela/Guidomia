@@ -33,6 +33,12 @@ extension CarsPresenter: CarsPresenterProtocol {
 private extension CarsPresenter {
     func formatViewModel() -> CarsViewModel {
         return .init(headerImage: .init(named: "tacoma"),
-                     sections: [])
+                     sections: [[.init(consList: [],
+                                       customerPrice: 10,
+                                       make: .alpine,
+                                       marketPrice: 10,
+                                       model: "",
+                                       prosList: [],
+                                       rating: 1)]])
     }
 }

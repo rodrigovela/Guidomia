@@ -23,6 +23,10 @@
 		FA78716A2884B9EA00F5E6AE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871692884B9EA00F5E6AE /* UIColor.swift */; };
 		FA78716E2884BB9600F5E6AE /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78716D2884BB9600F5E6AE /* NavigationBar.swift */; };
 		FA7871702884BBC100F5E6AE /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA78716F2884BBC100F5E6AE /* NavigationBar.xib */; };
+		FA7871742884C2A900F5E6AE /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871722884C2A900F5E6AE /* CarTableViewCell.swift */; };
+		FA7871752884C2A900F5E6AE /* CarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7871732884C2A900F5E6AE /* CarTableViewCell.xib */; };
+		FA7871782884C2C100F5E6AE /* ExpandedCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871762884C2C100F5E6AE /* ExpandedCarTableViewCell.swift */; };
+		FA7871792884C2C100F5E6AE /* ExpandedCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7871772884C2C100F5E6AE /* ExpandedCarTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,10 @@
 		FA7871692884B9EA00F5E6AE /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FA78716D2884BB9600F5E6AE /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationBar.swift; path = ../../../../../../NavigationBar.swift; sourceTree = "<group>"; };
 		FA78716F2884BBC100F5E6AE /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
+		FA7871722884C2A900F5E6AE /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		FA7871732884C2A900F5E6AE /* CarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarTableViewCell.xib; sourceTree = "<group>"; };
+		FA7871762884C2C100F5E6AE /* ExpandedCarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCarTableViewCell.swift; sourceTree = "<group>"; };
+		FA7871772884C2C100F5E6AE /* ExpandedCarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedCarTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,7 @@
 		FA316E4228831FED009800D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA7871712884C28C00F5E6AE /* Cells */,
 				FA7871632884A40300F5E6AE /* CustomView */,
 				FA316E1228831840009800D2 /* CarsViewController.swift */,
 			);
@@ -204,6 +213,17 @@
 				FA78716F2884BBC100F5E6AE /* NavigationBar.xib */,
 			);
 			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		FA7871712884C28C00F5E6AE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA7871722884C2A900F5E6AE /* CarTableViewCell.swift */,
+				FA7871732884C2A900F5E6AE /* CarTableViewCell.xib */,
+				FA7871762884C2C100F5E6AE /* ExpandedCarTableViewCell.swift */,
+				FA7871772884C2C100F5E6AE /* ExpandedCarTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,11 +307,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA316E1E28831842009800D2 /* LaunchScreen.storyboard in Resources */,
+				FA7871752884C2A900F5E6AE /* CarTableViewCell.xib in Resources */,
 				FA316E1B28831842009800D2 /* Assets.xcassets in Resources */,
 				FA316E472883201D009800D2 /* car_list.json in Resources */,
 				FA7871702884BBC100F5E6AE /* NavigationBar.xib in Resources */,
 				FA7871672884A51C00F5E6AE /* HeaderImage.xib in Resources */,
 				FA316E1628831840009800D2 /* Main.storyboard in Resources */,
+				FA7871792884C2C100F5E6AE /* ExpandedCarTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,8 +335,10 @@
 				FA316E1328831840009800D2 /* CarsViewController.swift in Sources */,
 				FA316E4A28832105009800D2 /* Car.swift in Sources */,
 				FA316E4E288322AE009800D2 /* CarsPresenter.swift in Sources */,
+				FA7871742884C2A900F5E6AE /* CarTableViewCell.swift in Sources */,
 				FA316E0F28831840009800D2 /* AppDelegate.swift in Sources */,
 				FA78716E2884BB9600F5E6AE /* NavigationBar.swift in Sources */,
+				FA7871782884C2C100F5E6AE /* ExpandedCarTableViewCell.swift in Sources */,
 				FA78716A2884B9EA00F5E6AE /* UIColor.swift in Sources */,
 				FA316E1128831840009800D2 /* SceneDelegate.swift in Sources */,
 				FA7871652884A50C00F5E6AE /* HeaderImage.swift in Sources */,

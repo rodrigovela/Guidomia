@@ -12,7 +12,7 @@ protocol CarsView: AnyObject {
 }
 
 struct CarsViewModel {
-    static let empty = CarsViewModel(sections: [])
+    static let empty = CarsViewModel()
     
     var headerImage: UIImage?
     var sections: [[Car]] = []
@@ -67,7 +67,10 @@ extension CarsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return .init()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CarTableViewCell", for: indexPath) as? CarTableViewCell else {
+            return .init()
+        }
+        return cell
     }
 }
 
@@ -77,5 +80,8 @@ private extension CarsViewController {
         carsTableView.dataSource = self
         carsTableView.rowHeight = UITableView.automaticDimension
         carsTableView.estimatedRowHeight = UITableView.automaticDimension
+        
+        let nib = UINib(nibName: "CarTableViewCell", bundle: nil)
+        carsTableView.register(nib, forCellReuseIdentifier: "CarTableViewCell")
     }
 }
