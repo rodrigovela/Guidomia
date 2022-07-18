@@ -13,16 +13,25 @@ protocol CarsPresenterProtocol {
 }
 
 final class CarsPresenter {
+    var fetchCars: FetchCars
     weak var view: CarsView?
     
-    init(view: CarsView?) {
+    private var cars: [Car] = [] {
+        didSet {
+            updateView()
+        }
+    }
+    
+    init(fetchCars: FetchCars = FetchCarsAdapter(),
+         view: CarsView?) {
+        self.fetchCars = fetchCars
         self.view = view
     }
 }
 
 extension CarsPresenter: CarsPresenterProtocol {
     func sceneDidLoad() {
-        view?.setup(formatViewModel())
+        requestCars()
     }
     
     func sceneWillAppear() {
@@ -31,14 +40,23 @@ extension CarsPresenter: CarsPresenterProtocol {
 }
 
 private extension CarsPresenter {
+    func updateView() {
+        view?.setup(formatViewModel())
+    }
+    
     func formatViewModel() -> CarsViewModel {
         return .init(headerImage: .init(named: "tacoma"),
-                     sections: [[.init(consList: [],
-                                       customerPrice: 10,
-                                       make: .alpine,
-                                       marketPrice: 10,
-                                       model: "",
-                                       prosList: [],
-                                       rating: 1)]])
+                     sections: [cars])
+    }
+    
+    func requestCars() {
+        fetchCars.fetch { [weak self] response in
+            switch response {
+                case .success(let cars):
+                    self?.cars = cars
+                case .failure(let error):
+                    print("Error: \(error.localizedDescription)")
+            }
+        }
     }
 }

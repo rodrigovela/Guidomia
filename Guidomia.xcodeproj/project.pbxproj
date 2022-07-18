@@ -27,6 +27,8 @@
 		FA7871752884C2A900F5E6AE /* CarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7871732884C2A900F5E6AE /* CarTableViewCell.xib */; };
 		FA7871782884C2C100F5E6AE /* ExpandedCarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871762884C2C100F5E6AE /* ExpandedCarTableViewCell.swift */; };
 		FA7871792884C2C100F5E6AE /* ExpandedCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7871772884C2C100F5E6AE /* ExpandedCarTableViewCell.xib */; };
+		FA78717B2884E08500F5E6AE /* FetchCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78717A2884E08500F5E6AE /* FetchCars.swift */; };
+		FA78717D2884E12C00F5E6AE /* CarsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78717C2884E12C00F5E6AE /* CarsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		FA7871732884C2A900F5E6AE /* CarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarTableViewCell.xib; sourceTree = "<group>"; };
 		FA7871762884C2C100F5E6AE /* ExpandedCarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCarTableViewCell.swift; sourceTree = "<group>"; };
 		FA7871772884C2C100F5E6AE /* ExpandedCarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedCarTableViewCell.xib; sourceTree = "<group>"; };
+		FA78717A2884E08500F5E6AE /* FetchCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCars.swift; sourceTree = "<group>"; };
+		FA78717C2884E12C00F5E6AE /* CarsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 		FA316E4428831FFF009800D2 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				FA78717A2884E08500F5E6AE /* FetchCars.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 		FA316E4528832007009800D2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FA78717C2884E12C00F5E6AE /* CarsService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -332,9 +338,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA316E1928831840009800D2 /* Guidomia.xcdatamodeld in Sources */,
+				FA78717B2884E08500F5E6AE /* FetchCars.swift in Sources */,
 				FA316E1328831840009800D2 /* CarsViewController.swift in Sources */,
 				FA316E4A28832105009800D2 /* Car.swift in Sources */,
 				FA316E4E288322AE009800D2 /* CarsPresenter.swift in Sources */,
+				FA78717D2884E12C00F5E6AE /* CarsService.swift in Sources */,
 				FA7871742884C2A900F5E6AE /* CarTableViewCell.swift in Sources */,
 				FA316E0F28831840009800D2 /* AppDelegate.swift in Sources */,
 				FA78716E2884BB9600F5E6AE /* NavigationBar.swift in Sources */,
