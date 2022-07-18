@@ -29,6 +29,11 @@
 		FA7871792884C2C100F5E6AE /* ExpandedCarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7871772884C2C100F5E6AE /* ExpandedCarTableViewCell.xib */; };
 		FA78717B2884E08500F5E6AE /* FetchCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78717A2884E08500F5E6AE /* FetchCars.swift */; };
 		FA78717D2884E12C00F5E6AE /* CarsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78717C2884E12C00F5E6AE /* CarsService.swift */; };
+		FA7871802884E6DB00F5E6AE /* LabelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78717F2884E6DB00F5E6AE /* LabelViewModel.swift */; };
+		FA7871832884EF6300F5E6AE /* SeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871812884EF6300F5E6AE /* SeparatorTableViewCell.swift */; };
+		FA7871842884EF6300F5E6AE /* SeparatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7871822884EF6300F5E6AE /* SeparatorTableViewCell.xib */; };
+		FA7871862884F25500F5E6AE /* CarsTableViewCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871852884F25500F5E6AE /* CarsTableViewCellFactory.swift */; };
+		FA7871882884F75C00F5E6AE /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871872884F75C00F5E6AE /* FetchImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,11 @@
 		FA7871772884C2C100F5E6AE /* ExpandedCarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedCarTableViewCell.xib; sourceTree = "<group>"; };
 		FA78717A2884E08500F5E6AE /* FetchCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCars.swift; sourceTree = "<group>"; };
 		FA78717C2884E12C00F5E6AE /* CarsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsService.swift; sourceTree = "<group>"; };
+		FA78717F2884E6DB00F5E6AE /* LabelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewModel.swift; sourceTree = "<group>"; };
+		FA7871812884EF6300F5E6AE /* SeparatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorTableViewCell.swift; sourceTree = "<group>"; };
+		FA7871822884EF6300F5E6AE /* SeparatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatorTableViewCell.xib; sourceTree = "<group>"; };
+		FA7871852884F25500F5E6AE /* CarsTableViewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTableViewCellFactory.swift; sourceTree = "<group>"; };
+		FA7871872884F75C00F5E6AE /* FetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				FA78717A2884E08500F5E6AE /* FetchCars.swift */,
+				FA7871872884F75C00F5E6AE /* FetchImage.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -199,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				FA7871692884B9EA00F5E6AE /* UIColor.swift */,
+				FA78717F2884E6DB00F5E6AE /* LabelViewModel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -228,6 +240,9 @@
 				FA7871732884C2A900F5E6AE /* CarTableViewCell.xib */,
 				FA7871762884C2C100F5E6AE /* ExpandedCarTableViewCell.swift */,
 				FA7871772884C2C100F5E6AE /* ExpandedCarTableViewCell.xib */,
+				FA7871812884EF6300F5E6AE /* SeparatorTableViewCell.swift */,
+				FA7871822884EF6300F5E6AE /* SeparatorTableViewCell.xib */,
+				FA7871852884F25500F5E6AE /* CarsTableViewCellFactory.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -318,6 +333,7 @@
 				FA316E472883201D009800D2 /* car_list.json in Resources */,
 				FA7871702884BBC100F5E6AE /* NavigationBar.xib in Resources */,
 				FA7871672884A51C00F5E6AE /* HeaderImage.xib in Resources */,
+				FA7871842884EF6300F5E6AE /* SeparatorTableViewCell.xib in Resources */,
 				FA316E1628831840009800D2 /* Main.storyboard in Resources */,
 				FA7871792884C2C100F5E6AE /* ExpandedCarTableViewCell.xib in Resources */,
 			);
@@ -341,13 +357,17 @@
 				FA78717B2884E08500F5E6AE /* FetchCars.swift in Sources */,
 				FA316E1328831840009800D2 /* CarsViewController.swift in Sources */,
 				FA316E4A28832105009800D2 /* Car.swift in Sources */,
+				FA7871882884F75C00F5E6AE /* FetchImage.swift in Sources */,
 				FA316E4E288322AE009800D2 /* CarsPresenter.swift in Sources */,
 				FA78717D2884E12C00F5E6AE /* CarsService.swift in Sources */,
+				FA7871832884EF6300F5E6AE /* SeparatorTableViewCell.swift in Sources */,
 				FA7871742884C2A900F5E6AE /* CarTableViewCell.swift in Sources */,
 				FA316E0F28831840009800D2 /* AppDelegate.swift in Sources */,
 				FA78716E2884BB9600F5E6AE /* NavigationBar.swift in Sources */,
 				FA7871782884C2C100F5E6AE /* ExpandedCarTableViewCell.swift in Sources */,
 				FA78716A2884B9EA00F5E6AE /* UIColor.swift in Sources */,
+				FA7871802884E6DB00F5E6AE /* LabelViewModel.swift in Sources */,
+				FA7871862884F25500F5E6AE /* CarsTableViewCellFactory.swift in Sources */,
 				FA316E1128831840009800D2 /* SceneDelegate.swift in Sources */,
 				FA7871652884A50C00F5E6AE /* HeaderImage.swift in Sources */,
 			);

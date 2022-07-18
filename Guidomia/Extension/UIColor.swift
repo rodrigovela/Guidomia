@@ -11,6 +11,7 @@ extension UIColor {
     static let customOrange: UIColor = .init(rgb: 0xFC6016)
     static let customDarkGray: UIColor = .init(rgb: 0x858585)
     static let customLightGray: UIColor = .init(rgb: 0xD5D5D5)
+    static var customBlack: UIColor = .black.withAlphaComponent(0.45)
 }
 
 extension UIColor {

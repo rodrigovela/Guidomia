@@ -15,7 +15,7 @@ struct CarsViewModel {
     static let empty = CarsViewModel()
     
     var headerImage: UIImage?
-    var sections: [[Car]] = []
+    var sections: [[CarsTableViewItem]] = []
 }
 
 final class CarsViewController: UIViewController {
@@ -24,6 +24,8 @@ final class CarsViewController: UIViewController {
     @IBOutlet private weak var carsTableView: UITableView!
     
     private lazy var presenter: CarsPresenterProtocol = CarsPresenter(view: self)
+    private lazy var cellFactory: CarsTableViewCellFactory = .init(tableView: self.carsTableView)
+    
     var viewModel: CarsViewModel = .empty {
         didSet {
             headerImage.imageView.image = viewModel.headerImage
@@ -67,10 +69,7 @@ extension CarsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CarTableViewCell", for: indexPath) as? CarTableViewCell else {
-            return .init()
-        }
-        return cell
+        return cellFactory.build(item: viewModel.sections[indexPath.section][indexPath.row], indexPath: indexPath)
     }
 }
 
@@ -80,8 +79,11 @@ private extension CarsViewController {
         carsTableView.dataSource = self
         carsTableView.rowHeight = UITableView.automaticDimension
         carsTableView.estimatedRowHeight = UITableView.automaticDimension
+        carsTableView.separatorColor = .none
         
         let nib = UINib(nibName: "CarTableViewCell", bundle: nil)
         carsTableView.register(nib, forCellReuseIdentifier: "CarTableViewCell")
+        let nib2 = UINib(nibName: "SeparatorTableViewCell", bundle: nil)
+        carsTableView.register(nib2, forCellReuseIdentifier: "SeparatorTableViewCell")
     }
 }

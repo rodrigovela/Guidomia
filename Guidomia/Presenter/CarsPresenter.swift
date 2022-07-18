@@ -5,7 +5,7 @@
 //  Created by Rodrigo Velazquez on 16/07/22.
 //
 
-import Foundation
+import UIKit
 
 protocol CarsPresenterProtocol {
     func sceneDidLoad()
@@ -14,6 +14,7 @@ protocol CarsPresenterProtocol {
 
 final class CarsPresenter {
     var fetchCars: FetchCars
+    var fetchImage: FetchImage
     weak var view: CarsView?
     
     private var cars: [Car] = [] {
@@ -23,8 +24,10 @@ final class CarsPresenter {
     }
     
     init(fetchCars: FetchCars = FetchCarsAdapter(),
+         fetchImage: FetchImage = FetchImageAdapter(),
          view: CarsView?) {
         self.fetchCars = fetchCars
+        self.fetchImage = fetchImage
         self.view = view
     }
 }
@@ -45,8 +48,27 @@ private extension CarsPresenter {
     }
     
     func formatViewModel() -> CarsViewModel {
+        var items: [CarsTableViewItem] = []
+        
+        cars.enumerated().forEach { element in
+            if element.offset != 0 {
+                items.append(CarTableViewSeparatorViewModel())
+            }
+            
+            items.append(CarTableViewCellViewModel(image: fetchImage.execute(forModel: element.element),
+                                                   title: .init(text: element.element.model,
+                                                                appearance: .init(font: .systemFont(ofSize: 20, weight: .bold),
+                                                                                  textColor: .customBlack)),
+                                                   subtitle: .init(text: "Price: \(Int(element.element.customerPrice / 1000))k",
+                                                                   appearance: .init(font: .systemFont(ofSize: 15, weight: .semibold),
+                                                                                     textColor: .customBlack)),
+                                                   rate: element.element.rating))
+            
+            
+        }
+        
         return .init(headerImage: .init(named: "tacoma"),
-                     sections: [cars])
+                     sections: [items])
     }
     
     func requestCars() {
