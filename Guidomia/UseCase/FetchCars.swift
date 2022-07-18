@@ -13,14 +13,31 @@ protocol FetchCars {
 
 final class FetchCarsAdapter {
     var service: CarsService
+    var storage: CarsStorage
     
-    init(service: CarsService = LocalCarsServiceAdapter()) {
+    init(service: CarsService = LocalCarsServiceAdapter(),
+         storage: CarsStorage = CarsStorageAdapter(storage: .standard)) {
         self.service = service
+        self.storage = storage
     }
 }
 
 extension FetchCarsAdapter: FetchCars {
     func fetch(completion: @escaping (Result<[Car], CarsServiceError>) -> Void) {
-        service.fetch(completion: completion)
+        let data = storage.getCars()
+        
+        guard data.isEmpty else {
+            completion(.success(data))
+            return
+        }
+        service.fetch { [weak self] response in
+            guard case .success(let cars) = response else {
+                completion(response)
+                return
+            }
+            
+            self?.storage.save(cars: cars)
+            completion(response)
+        }
     }
 }
