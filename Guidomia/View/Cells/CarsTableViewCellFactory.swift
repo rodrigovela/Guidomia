@@ -33,6 +33,8 @@ final class CarsTableViewCellFactory: CarsTableViewItemVisitor {
             return .init()
         }
         
+        cell.setup(viewModel: expanded)
+        
         return cell
     }
     

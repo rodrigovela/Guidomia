@@ -79,11 +79,13 @@ private extension CarsViewController {
         carsTableView.dataSource = self
         carsTableView.rowHeight = UITableView.automaticDimension
         carsTableView.estimatedRowHeight = UITableView.automaticDimension
-        carsTableView.separatorColor = .none
+        carsTableView.separatorStyle = .none
         
         let nib = UINib(nibName: "CarTableViewCell", bundle: nil)
         carsTableView.register(nib, forCellReuseIdentifier: "CarTableViewCell")
         let nib2 = UINib(nibName: "SeparatorTableViewCell", bundle: nil)
         carsTableView.register(nib2, forCellReuseIdentifier: "SeparatorTableViewCell")
+        let nib3 = UINib(nibName: "ExpandedCarTableViewCell", bundle: nil)
+        carsTableView.register(nib3, forCellReuseIdentifier: "ExpandedCarTableViewCell")
     }
 }

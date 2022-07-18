@@ -64,6 +64,30 @@ private extension CarsPresenter {
                                                                                      textColor: .customBlack)),
                                                    rate: element.element.rating))
             
+            if element.offset == 0 {
+                items.append(ExpandedCarTableViewCellViewModel(prosTitle: .init(text: "Pros",
+                                                                                appearance: .init(font: .systemFont(ofSize: 15, weight: .semibold),
+                                                                                                  textColor: .customBlack)),
+                                                               pros: element.element.prosList.compactMap { pro in
+                                                                guard !pro.isEmpty else { return nil }
+                                                                return .init(text: pro,
+                                                                             appearance: .init(font: .systemFont(ofSize: 14,
+                                                                                                                 weight: .semibold),
+                                                                                               textColor: .black))
+                                                               },
+                                                               consTitle: .init(text: "Cons",
+                                                                                appearance: .init(font: .systemFont(ofSize: 15,
+                                                                                                                    weight: .semibold),
+                                                                                                                textColor: .customBlack)),
+                                                               cons: element.element.consList.compactMap { con in
+                                                                guard !con.isEmpty else { return nil }
+                                                                return .init(text: con,
+                                                                             appearance: .init(font: .systemFont(ofSize: 14,
+                                                                                                                 weight: .semibold),
+                                                                                               textColor: .black))
+                                                               }))
+            }
+            
             
         }
         

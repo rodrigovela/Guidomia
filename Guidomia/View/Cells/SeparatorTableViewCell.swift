@@ -40,12 +40,6 @@ struct CarTableViewSeparatorViewModel: CarsTableViewItem {
     }
 }
 
-struct ExpandedCarTableViewCellViewModel: CarsTableViewItem {
-    func accept<Visitor>(visitor: Visitor, additionalInfo: Visitor.AdditionalInfo) -> Visitor.Result where Visitor : CarsTableViewItemVisitor {
-        return visitor.visit(expanded: self, additionalInfo: additionalInfo)
-    }
-}
-
 protocol CarsTableViewItemVisitor {
     associatedtype Result
     associatedtype AdditionalInfo
