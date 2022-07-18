@@ -34,6 +34,8 @@
 		FA7871842884EF6300F5E6AE /* SeparatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7871822884EF6300F5E6AE /* SeparatorTableViewCell.xib */; };
 		FA7871862884F25500F5E6AE /* CarsTableViewCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871852884F25500F5E6AE /* CarsTableViewCellFactory.swift */; };
 		FA7871882884F75C00F5E6AE /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871872884F75C00F5E6AE /* FetchImage.swift */; };
+		FA78718B28851BC000F5E6AE /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78718A28851BC000F5E6AE /* FilterView.swift */; };
+		FA78718D28851BD400F5E6AE /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA78718C28851BD400F5E6AE /* FilterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		FA7871822884EF6300F5E6AE /* SeparatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeparatorTableViewCell.xib; sourceTree = "<group>"; };
 		FA7871852884F25500F5E6AE /* CarsTableViewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTableViewCellFactory.swift; sourceTree = "<group>"; };
 		FA7871872884F75C00F5E6AE /* FetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImage.swift; sourceTree = "<group>"; };
+		FA78718A28851BC000F5E6AE /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		FA78718C28851BD400F5E6AE /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,7 @@
 		FA7871632884A40300F5E6AE /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				FA78718928851BA200F5E6AE /* Filter */,
 				FA78716C2884BB8000F5E6AE /* NavigationBar */,
 				FA78716B2884BB7200F5E6AE /* HeaderImage */,
 			);
@@ -245,6 +250,15 @@
 				FA7871852884F25500F5E6AE /* CarsTableViewCellFactory.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA78718928851BA200F5E6AE /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				FA78718A28851BC000F5E6AE /* FilterView.swift */,
+				FA78718C28851BD400F5E6AE /* FilterView.xib */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA78718D28851BD400F5E6AE /* FilterView.xib in Resources */,
 				FA316E1E28831842009800D2 /* LaunchScreen.storyboard in Resources */,
 				FA7871752884C2A900F5E6AE /* CarTableViewCell.xib in Resources */,
 				FA316E1B28831842009800D2 /* Assets.xcassets in Resources */,
@@ -357,6 +372,7 @@
 				FA78717B2884E08500F5E6AE /* FetchCars.swift in Sources */,
 				FA316E1328831840009800D2 /* CarsViewController.swift in Sources */,
 				FA316E4A28832105009800D2 /* Car.swift in Sources */,
+				FA78718B28851BC000F5E6AE /* FilterView.swift in Sources */,
 				FA7871882884F75C00F5E6AE /* FetchImage.swift in Sources */,
 				FA316E4E288322AE009800D2 /* CarsPresenter.swift in Sources */,
 				FA78717D2884E12C00F5E6AE /* CarsService.swift in Sources */,
