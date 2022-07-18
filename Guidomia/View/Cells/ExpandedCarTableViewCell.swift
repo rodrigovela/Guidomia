@@ -24,16 +24,24 @@ final class ExpandedCarTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        descriptionStack.arrangedSubviews.forEach(descriptionStack.removeArrangedSubview(_:))
+        descriptionStack.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        descriptionStack.arrangedSubviews.forEach(descriptionStack.removeArrangedSubview(_:))
+        descriptionStack.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
         
     }
     
     func setup(viewModel: ExpandedCarTableViewCellViewModel) {
+        descriptionStack.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
+        
         if !viewModel.pros.isEmpty {
             let title = UILabel()
             title.setup(viewModel: viewModel.prosTitle)

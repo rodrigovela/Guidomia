@@ -10,12 +10,14 @@ import UIKit
 protocol CarsPresenterProtocol {
     func sceneDidLoad()
     func sceneWillAppear()
+    func didSelectCar(indexPath: Int)
 }
 
 final class CarsPresenter {
     var fetchCars: FetchCars
     var fetchImage: FetchImage
     weak var view: CarsView?
+    var expandedItemIndex: Int = 0
     
     private var cars: [Car] = [] {
         didSet {
@@ -40,6 +42,22 @@ extension CarsPresenter: CarsPresenterProtocol {
     func sceneWillAppear() {
     
     }
+    
+    func didSelectCar(indexPath: Int) {
+        let deletedIndexPath = expandedItemIndex + 1
+        view?.delete(formatViewModel(insert: false), indexPath: [.init(row: deletedIndexPath, section: 0)])
+        expandedItemIndex = indexPath
+        
+        let newViewModel = formatViewModel(insert: true)
+        let insertIndex = newViewModel.sections[0].firstIndex { item in
+            if let car = item as? CarTableViewCellViewModel {
+                return car.index == indexPath
+            } else {
+                return false
+            }
+        } ?? 0
+        view?.insert(formatViewModel(insert: true), indexPath: [.init(row: insertIndex + 1, section: 0)])
+    }
 }
 
 private extension CarsPresenter {
@@ -47,7 +65,7 @@ private extension CarsPresenter {
         view?.setup(formatViewModel())
     }
     
-    func formatViewModel() -> CarsViewModel {
+    func formatViewModel(insert: Bool = true) -> CarsViewModel {
         var items: [CarsTableViewItem] = []
         
         cars.enumerated().forEach { element in
@@ -62,9 +80,10 @@ private extension CarsPresenter {
                                                    subtitle: .init(text: "Price: \(Int(element.element.customerPrice / 1000))k",
                                                                    appearance: .init(font: .systemFont(ofSize: 15, weight: .semibold),
                                                                                      textColor: .customBlack)),
-                                                   rate: element.element.rating))
+                                                   rate: element.element.rating,
+                                                   index: element.offset))
             
-            if element.offset == 0 {
+            if expandedItemIndex == element.offset && insert {
                 items.append(ExpandedCarTableViewCellViewModel(prosTitle: .init(text: "Pros",
                                                                                 appearance: .init(font: .systemFont(ofSize: 15, weight: .semibold),
                                                                                                   textColor: .customBlack)),

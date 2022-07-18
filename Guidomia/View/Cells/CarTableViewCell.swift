@@ -12,6 +12,7 @@ struct CarTableViewCellViewModel {
     var title: LabelViewModel
     var subtitle: LabelViewModel
     var rate: Int
+    var index: Int
 }
 
 final class CarTableViewCell: UITableViewCell {
@@ -23,13 +24,13 @@ final class CarTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        rateStackView.arrangedSubviews.forEach(rateStackView.removeArrangedSubview(_:))
+        rateStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         imageView?.image = nil
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        rateStackView.arrangedSubviews.forEach(rateStackView.removeArrangedSubview(_:))
+        rateStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         imageView?.image = nil
         
     }
@@ -44,7 +45,7 @@ final class CarTableViewCell: UITableViewCell {
 
 private extension CarTableViewCell {
     func buildRateStars(rate: Int) {
-        rateStackView.arrangedSubviews.forEach(rateStackView.removeArrangedSubview(_:))
+        rateStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         
         let stars: [UIImageView] = (0..<rate).compactMap { _ in
             let image = UIImage(systemName: "star.fill")?.withRenderingMode(.alwaysTemplate)

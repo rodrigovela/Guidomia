@@ -9,6 +9,8 @@ import UIKit
 
 protocol CarsView: AnyObject {
     func setup(_ viewModel: CarsViewModel)
+    func insert(_ viewModel: CarsViewModel, indexPath: [IndexPath])
+    func delete(_ viewModel: CarsViewModel, indexPath: [IndexPath])
 }
 
 struct CarsViewModel {
@@ -26,14 +28,7 @@ final class CarsViewController: UIViewController {
     private lazy var presenter: CarsPresenterProtocol = CarsPresenter(view: self)
     private lazy var cellFactory: CarsTableViewCellFactory = .init(tableView: self.carsTableView)
     
-    var viewModel: CarsViewModel = .empty {
-        didSet {
-            headerImage.imageView.image = viewModel.headerImage
-            headerImage.title.text = "Tacoma 2021"
-            headerImage.subtitle.text = "Get your's now"
-            carsTableView.reloadData()
-        }
-    }
+    var viewModel: CarsViewModel = .empty
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,12 +47,42 @@ extension CarsViewController: CarsView {
     func setup(_ viewModel: CarsViewModel) {
         DispatchQueue.main.async { [weak self] in
             self?.viewModel = viewModel
+            self?.headerImage.imageView.image = viewModel.headerImage
+            self?.headerImage.title.text = "Tacoma 2021"
+            self?.headerImage.subtitle.text = "Get your's now"
+            self?.carsTableView.reloadData()
+        }
+    }
+    
+    func insert(_ viewModel: CarsViewModel, indexPath: [IndexPath]) {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewModel = viewModel
+            self?.carsTableView.beginUpdates()
+            self?.carsTableView.insertRows(at: indexPath, with: .automatic)
+            self?.carsTableView.endUpdates()
+            
+            self?.carsTableView.scrollToRow(at: indexPath.first ?? .init(row: 0, section: 0), at: .bottom, animated: true)
+        }
+    }
+    
+    func delete(_ viewModel: CarsViewModel, indexPath: [IndexPath]) {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewModel = viewModel
+            self?.carsTableView.beginUpdates()
+            self?.carsTableView.deleteRows(at: indexPath, with: .automatic)
+            self?.carsTableView.endUpdates()
         }
     }
 }
 
 extension CarsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let car = viewModel.sections[indexPath.section][indexPath.row] as? CarTableViewCellViewModel else {
+            return
+        }
+        
+        presenter.didSelectCar(indexPath: car.index)
+    }
 }
 
 extension CarsViewController: UITableViewDataSource {
