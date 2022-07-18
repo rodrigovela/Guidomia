@@ -11,6 +11,8 @@ protocol CarsPresenterProtocol {
     func sceneDidLoad()
     func sceneWillAppear()
     func didSelectCar(indexPath: Int)
+    func didChangeMake(make: String)
+    func didChangeModel(model: String)
 }
 
 final class CarsPresenter {
@@ -18,8 +20,16 @@ final class CarsPresenter {
     var fetchImage: FetchImage
     weak var view: CarsView?
     var expandedItemIndex: Int = 0
+    var selectedMake = "Any Make"
+    var selectedModel = "Any Model"
     
     private var cars: [Car] = [] {
+        didSet {
+            filteredCars = cars
+        }
+    }
+    
+    private var filteredCars: [Car] = [] {
         didSet {
             updateView()
         }
@@ -36,6 +46,7 @@ final class CarsPresenter {
 
 extension CarsPresenter: CarsPresenterProtocol {
     func sceneDidLoad() {
+        setupView()
         requestCars()
     }
     
@@ -43,7 +54,23 @@ extension CarsPresenter: CarsPresenterProtocol {
     
     }
     
+    func didChangeMake(make: String) {
+        expandedItemIndex = 0
+        selectedMake = make
+        filteredCars = selectedMake == "Any Make" ? cars : cars.filter { $0.make.rawValue == selectedMake }
+    }
+    
+    func didChangeModel(model: String) {
+        expandedItemIndex = 0
+        selectedModel = model
+        filteredCars = selectedModel == "Any Model" ? cars : cars.filter { $0.model == selectedModel }
+    }
+    
     func didSelectCar(indexPath: Int) {
+        guard expandedItemIndex != indexPath else {
+            return
+        }
+        
         let deletedViewModel = formatViewModel(insert: false)
         let deleteIndex = deletedViewModel.sections[0].firstIndex { item in
             if let car = item as? CarTableViewCellViewModel {
@@ -68,14 +95,17 @@ extension CarsPresenter: CarsPresenterProtocol {
 }
 
 private extension CarsPresenter {
-    func updateView() {
+    func setupView() {
         view?.setup(formatViewModel())
+    }
+    
+    func updateView() {
+        view?.updateContent(formatViewModel())
     }
     
     func formatViewModel(insert: Bool = true) -> CarsViewModel {
         var items: [CarsTableViewItem] = []
-        
-        cars.enumerated().forEach { element in
+        filteredCars.enumerated().forEach { element in
             if element.offset != 0 {
                 items.append(CarTableViewSeparatorViewModel())
             }
@@ -117,7 +147,16 @@ private extension CarsPresenter {
             
         }
         
+        let makeOptions: [String] = ["Any Make"] + cars.compactMap { $0.make.rawValue }
+        let modelOptions: [String] = ["Any Model"] + cars.compactMap { $0.model }
+        
         return .init(headerImage: .init(named: "tacoma"),
+                     filter: .init(title: .init(text: "Filter:",
+                                                appearance: .init(font: .systemFont(ofSize: 20, weight: .semibold), textColor: .white)),
+                                   selectedMakeOption: selectedMake,
+                                   anyMakeOptions: makeOptions,
+                                   selectedModelOption: selectedModel,
+                                   anyModelOptions: modelOptions),
                      sections: [items])
     }
     

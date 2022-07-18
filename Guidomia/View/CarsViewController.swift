@@ -9,6 +9,7 @@ import UIKit
 
 protocol CarsView: AnyObject {
     func setup(_ viewModel: CarsViewModel)
+    func updateContent(_ viewModel: CarsViewModel)
     func insert(_ viewModel: CarsViewModel, indexPath: [IndexPath])
     func delete(_ viewModel: CarsViewModel, indexPath: [IndexPath])
 }
@@ -17,6 +18,7 @@ struct CarsViewModel {
     static let empty = CarsViewModel()
     
     var headerImage: UIImage?
+    var filter: FilterViewModel = .empty
     var sections: [[CarsTableViewItem]] = []
 }
 
@@ -28,11 +30,13 @@ final class CarsViewController: UIViewController {
     private lazy var presenter: CarsPresenterProtocol = CarsPresenter(view: self)
     private lazy var cellFactory: CarsTableViewCellFactory = .init(tableView: self.carsTableView)
     
+    @IBOutlet weak var filterView: FilterView!
     var viewModel: CarsViewModel = .empty
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        filterView.delegate = self
         presenter.sceneDidLoad()
         self.view.backgroundColor = .customOrange
     }
@@ -48,8 +52,17 @@ extension CarsViewController: CarsView {
         DispatchQueue.main.async { [weak self] in
             self?.viewModel = viewModel
             self?.headerImage.imageView.image = viewModel.headerImage
+            self?.filterView.setup(viewModel: viewModel.filter)
             self?.headerImage.title.text = "Tacoma 2021"
             self?.headerImage.subtitle.text = "Get your's now"
+            self?.carsTableView.reloadData()
+        }
+    }
+    
+    func updateContent(_ viewModel: CarsViewModel) {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewModel = viewModel
+            self?.filterView.setup(viewModel: viewModel.filter)
             self?.carsTableView.reloadData()
         }
     }
@@ -69,7 +82,7 @@ extension CarsViewController: CarsView {
         DispatchQueue.main.async { [weak self] in
             self?.viewModel = viewModel
             self?.carsTableView.beginUpdates()
-            self?.carsTableView.deleteRows(at: indexPath, with: .automatic)
+            self?.carsTableView.deleteRows(at: indexPath, with: .none)
             self?.carsTableView.endUpdates()
         }
     }
@@ -95,6 +108,18 @@ extension CarsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return cellFactory.build(item: viewModel.sections[indexPath.section][indexPath.row], indexPath: indexPath)
+    }
+}
+
+extension CarsViewController: FilterViewDelegate {
+    func didSelectMake(_ make: String) {
+        view.endEditing(true)
+        presenter.didChangeMake(make: make)
+    }
+    
+    func didSelectModel(_ model: String) {
+        view.endEditing(true)
+        presenter.didChangeModel(model: model)
     }
 }
 

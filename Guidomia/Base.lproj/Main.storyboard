@@ -28,30 +28,39 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9cm-1t-kiz">
-                                <rect key="frame" x="0.0" y="301" width="414" height="595"/>
+                                <rect key="frame" x="0.0" y="466.5" width="414" height="429.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPY-hb-jl0" customClass="FilterView" customModule="Guidomia" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="301" width="414" height="165.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="9cm-1t-kiz" firstAttribute="top" secondItem="eTp-3g-AqL" secondAttribute="bottom" id="2lh-Cu-33n"/>
                             <constraint firstItem="eTp-3g-AqL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7kV-QQ-uPt"/>
+                            <constraint firstItem="bPY-hb-jl0" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="DJk-du-iKJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9cm-1t-kiz" secondAttribute="trailing" id="IcL-Es-hra"/>
                             <constraint firstItem="buc-Dm-btE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KKc-4A-EGQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="buc-Dm-btE" secondAttribute="trailing" id="OZ5-cf-Mcx"/>
+                            <constraint firstItem="9cm-1t-kiz" firstAttribute="top" secondItem="bPY-hb-jl0" secondAttribute="bottom" id="Y0d-iz-4cx"/>
                             <constraint firstItem="buc-Dm-btE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bJM-7P-ocQ"/>
                             <constraint firstItem="9cm-1t-kiz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bvZ-YI-Q9W"/>
                             <constraint firstItem="eTp-3g-AqL" firstAttribute="top" secondItem="buc-Dm-btE" secondAttribute="bottom" id="g77-un-ETa"/>
                             <constraint firstItem="eTp-3g-AqL" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="i7n-pt-hKj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eTp-3g-AqL" secondAttribute="trailing" id="jkE-ge-Jrr"/>
                             <constraint firstAttribute="bottom" secondItem="9cm-1t-kiz" secondAttribute="bottom" id="lss-hP-aUA"/>
+                            <constraint firstItem="bPY-hb-jl0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mNm-h0-ZEZ"/>
+                            <constraint firstItem="bPY-hb-jl0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zO9-MK-Xin"/>
+                            <constraint firstItem="bPY-hb-jl0" firstAttribute="top" secondItem="eTp-3g-AqL" secondAttribute="bottom" id="zsX-n2-AfC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uH3-uJ-mH2"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="carsTableView" destination="9cm-1t-kiz" id="oS4-Jd-Xjc"/>
+                        <outlet property="filterView" destination="bPY-hb-jl0" id="LWt-nk-3Fu"/>
                         <outlet property="headerImage" destination="eTp-3g-AqL" id="jMW-oP-7xG"/>
                     </connections>
                 </viewController>
