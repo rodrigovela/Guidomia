@@ -20,7 +20,6 @@
 		FA7871652884A50C00F5E6AE /* HeaderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871642884A50C00F5E6AE /* HeaderImage.swift */; };
 		FA7871672884A51C00F5E6AE /* HeaderImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7871662884A51C00F5E6AE /* HeaderImage.xib */; };
 		FA78716A2884B9EA00F5E6AE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871692884B9EA00F5E6AE /* UIColor.swift */; };
-		FA78716E2884BB9600F5E6AE /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78716D2884BB9600F5E6AE /* NavigationBar.swift */; };
 		FA7871702884BBC100F5E6AE /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA78716F2884BBC100F5E6AE /* NavigationBar.xib */; };
 		FA7871742884C2A900F5E6AE /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871722884C2A900F5E6AE /* CarTableViewCell.swift */; };
 		FA7871752884C2A900F5E6AE /* CarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7871732884C2A900F5E6AE /* CarTableViewCell.xib */; };
@@ -38,6 +37,7 @@
 		FA78718F2885F06600F5E6AE /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78718E2885F06600F5E6AE /* CustomView.swift */; };
 		FA7871912885F24300F5E6AE /* CarsTableViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871902885F24300F5E6AE /* CarsTableViewItem.swift */; };
 		FA7871952886083400F5E6AE /* CarsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7871942886083400F5E6AE /* CarsStorage.swift */; };
+		FA9FFAC8288722BA0081AAB3 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9FFAC7288722BA0081AAB3 /* NavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,6 @@
 		FA7871642884A50C00F5E6AE /* HeaderImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderImage.swift; sourceTree = "<group>"; };
 		FA7871662884A51C00F5E6AE /* HeaderImage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderImage.xib; sourceTree = "<group>"; };
 		FA7871692884B9EA00F5E6AE /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		FA78716D2884BB9600F5E6AE /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationBar.swift; path = ../../../../../../NavigationBar.swift; sourceTree = "<group>"; };
 		FA78716F2884BBC100F5E6AE /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		FA7871722884C2A900F5E6AE /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		FA7871732884C2A900F5E6AE /* CarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarTableViewCell.xib; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		FA78718E2885F06600F5E6AE /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		FA7871902885F24300F5E6AE /* CarsTableViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTableViewItem.swift; sourceTree = "<group>"; };
 		FA7871942886083400F5E6AE /* CarsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsStorage.swift; sourceTree = "<group>"; };
+		FA9FFAC7288722BA0081AAB3 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,7 +237,7 @@
 		FA78716C2884BB8000F5E6AE /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				FA78716D2884BB9600F5E6AE /* NavigationBar.swift */,
+				FA9FFAC7288722BA0081AAB3 /* NavigationBar.swift */,
 				FA78716F2884BBC100F5E6AE /* NavigationBar.xib */,
 			);
 			path = NavigationBar;
@@ -386,10 +386,10 @@
 				FA7871742884C2A900F5E6AE /* CarTableViewCell.swift in Sources */,
 				FA7871952886083400F5E6AE /* CarsStorage.swift in Sources */,
 				FA316E0F28831840009800D2 /* AppDelegate.swift in Sources */,
-				FA78716E2884BB9600F5E6AE /* NavigationBar.swift in Sources */,
 				FA7871912885F24300F5E6AE /* CarsTableViewItem.swift in Sources */,
 				FA7871782884C2C100F5E6AE /* ExpandedCarTableViewCell.swift in Sources */,
 				FA78716A2884B9EA00F5E6AE /* UIColor.swift in Sources */,
+				FA9FFAC8288722BA0081AAB3 /* NavigationBar.swift in Sources */,
 				FA7871802884E6DB00F5E6AE /* LabelViewModel.swift in Sources */,
 				FA7871862884F25500F5E6AE /* CarsTableViewCellFactory.swift in Sources */,
 				FA316E1128831840009800D2 /* SceneDelegate.swift in Sources */,
